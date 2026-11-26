@@ -1,0 +1,8 @@
+.env
+.env.*
+*.log
+*.key
+*.pem
+*.cert
+options.json
+__pycache__/
