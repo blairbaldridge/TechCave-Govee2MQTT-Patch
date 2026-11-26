@@ -1,0 +1,35 @@
+name: Govee to MQTT Bridge (TechCave Tap-to-Run Patch)
+version: "0.1.0"
+slug: govee2mqtt_techcave_patch
+description: Temporary Govee2MQTT build with the Tap-to-Run account-token fix
+url: https://github.com/blairbaldridge/TechCave-Govee2MQTT-Patch
+arch:
+  - aarch64
+  - amd64
+init: false
+startup: services
+services:
+  - mqtt:need
+apparmor: true
+host_network: true
+webui: http://[HOST]:[PORT:8056]/assets/index.html
+map:
+  - type: addon_config
+    read_only: false
+    path: /app/config
+options:
+  temperature_scale: "C"
+schema:
+  temperature_scale: "str?"
+  govee_email: "str?"
+  govee_password: "password?"
+  govee_api_key: "password?"
+  mqtt_host: "str?"
+  mqtt_port: "int?"
+  mqtt_username: "str?"
+  mqtt_password: "password?"
+  debug_level: "str?"
+  no_multicast: "bool?"
+  broadcast_all: "bool?"
+  global_broadcast: "bool?"
+  scan: "str?"
